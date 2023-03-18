@@ -2,7 +2,8 @@
 #include <unistd.h>
 
 /**
- * main - c printing exactly xxxx followed by new line, to the standard error
+ * main - c printing to the standard error
+ *
  * Return: always 1
  */
 
