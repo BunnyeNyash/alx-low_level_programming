@@ -9,20 +9,20 @@
 
 int main(void)
 {
-	int fib[50];
-	int i;
+	int prev = 1;
+	int curr = 2;
+	int next;
 
-	fib[0] = 1;
-	fib[1] = 2;
+	printf("%d, %d", prev, curr);
 
-	for (i = 2; i < 50; i++)
+	for (int i = 2; i < 50; i++)
 	{
-		fib[i] = fib[i - 1] + fib[i - 2];
+		next = prev + curr;
+		printf(", %d", next);
+		prev = curr;
+		curr = next;
 	}
-	for (i = 0; i < 49; i++)
-	{
-		printf("%d, ", fib[i]);
-	}
-	printf("%d\n", fib[49]);
+	printf("\n");
+
 	return (0);
 }
