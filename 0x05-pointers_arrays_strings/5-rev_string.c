@@ -1,16 +1,16 @@
-# include "main.h"
+#include "main.h"
 
 /**
- * rev_string - function reverses a string
- * @s: Pointer to the string to be reversed
+ * rev_string - Reverses a string.
+ * @s: The string to reverse
  *
  * Return: string and in reverse
  */
 
 void rev_string(char *s)
 {
+	int len = 0, i;
 	char temp;
-	int i, len = 0;
 
 	while (s[len] != '\0')
 		len++;
