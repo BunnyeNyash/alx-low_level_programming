@@ -9,18 +9,19 @@
 
 int main(void)
 {
-	unsigned long int a = 1, b = 2, c;
-	int i;
+	int count, i;
+	unsigned long fib1 = 1, fib2 = 2, sum;
 
-	printf("%lu, %lu", a, b);
-	for (i = 3; i <= 98; i++)
+	printf("%lu, %lu", fib1, fib2);
+
+	for (count = 3; count <= 98; count++)
 	{
-		c = a + b;
-		printf(", %lu", c);
-		a = b;
-		b = c;
+		sum = fib1 + fib2;
+		printf(", %lu", sum);
+
+		fib1 = fib2;
+		fib2 = sum;
 	}
 	printf("\n");
-
 	return (0);
 }
