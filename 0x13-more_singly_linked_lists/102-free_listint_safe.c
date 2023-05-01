@@ -12,26 +12,20 @@ size_t free_listint_safe(listint_t **h)
 	listint_t *current, *next;
 	size_t count = 0;
 
-	if (h == NULL)
-		exit(98);
+	if (h == NULL || *h == NULL)
+		return (0);
 
 	current = *h;
-
 	while (current != NULL)
 	{
 		count++;
-
-		/* Check if we are in a loop */
-		if (current <= next)
-		{
-			*h = NULL;
-			exit(98);
-		}
-
 		next = current->next;
 
 		/* Free the current node */
 		free(current);
+
+		if (next >= current)
+			break;
 
 		/* Move to the next node */
 		current = next;
